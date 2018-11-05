@@ -1,0 +1,7 @@
+{
+  "/numbers": {
+    "target": "http://vat.erply.com",
+    "secure": false,
+    "changeOrigin": true
+  }
+}

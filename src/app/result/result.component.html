@@ -1,0 +1,90 @@
+<div class="mainDiv">
+
+  <!-- end MAIN BAR-->
+  <div [@emergeRight] class="jumbotron text-center">
+    <h1 >FIND A COMPANY</h1>
+    <p>You give us the VIN code. We give you the company you are looking for.</p>
+  </div>
+  <!-- end MAIN BAR-->
+
+  <!-- start SEARCH FIELD-->
+  <div class="searchDiv container"
+       [@emergeLeft]>
+    <form>
+      <div class="input-group input-group-lg row">
+
+          <!-- Search bar -->
+          <input [(ngModel)]="vatForm"
+                 type="text"
+                 #nameRef="ngModel"
+                 id="vatid"
+                 class="form-control"
+                 name="vatForm"
+                 autofocus
+                 placeholder="Enter VAT: e.g. DK61126228"
+                 pattern="^[a-zA-Z]{2}\d{5,20}$"
+                 (keyup.enter)="getThisVat()"
+                 required>
+          <div class="input-group-btn">
+
+            <!-- Search Button -->
+            <button type="submit"
+                    [disabled]="nameRef.invalid"
+                    class="btn btn-default"
+                    (click)="getThisVat()">
+              <span class="glyphicon glyphicon-search"></span>
+            </button>
+          </div>
+
+      </div>
+    </form>
+    <!-- end SEARCH FIELD-->
+
+    <!-- start RESULT FIELD-->
+
+    <!--Rendered part-->
+    <div *ngIf="vatCompany || errMsg"
+         class="resultDiv">
+      <div *ngIf="(errMsg || !vatCompany.Valid); then notValid else valid"></div>
+    </div>
+
+    <!--Reference if the company has been found-->
+    <ng-template #valid>
+      <div>
+        <h2>
+          <strong>{{vatCompany.Name | uppercase}}</strong>
+        </h2>
+        <span id="flagIcon">
+        <img [src]="flagPAth">
+      </span>
+        <strong>{{vatCompany.CountryCode}}</strong>{{vatCompany.VATNumber}}
+        <p><span class="glyphicon glyphicon-map-marker"></span>{{vatCompany.Address}}</p>
+      </div>
+    </ng-template>
+
+    <!--Reference if there is no such company-->
+    <ng-template #notValid>
+      <div>
+        <h2>Are you sure the VAT is correct? Try again.</h2>
+      </div>
+    </ng-template>
+    <!-- end RESULT FIELD-->
+
+    <!-- start footer -->
+  </div>
+  <div class="footer">
+    <p class="copyright">© Dmitri Sim</p>
+    <a href="https://github.com/simJSatw"
+       target="_blank">
+      <img class="gitLogo"
+           src="../../assets/github-logo.png" >
+    </a>
+    <a href="https://linkedin.com/in/dmitri-sim-075018172"
+       target="_blank">
+      <img class="inLogo"
+           src="../../assets/linkedin.png">
+    </a>
+  </div>
+  <!-- end footer -->
+
+</div>

@@ -1,0 +1,77 @@
+.mainDiv {
+  height: 100%;
+  background: url("../../assets/map2.jpg") repeat-y;
+}
+
+.jumbotron {
+  background-color: #202020;
+  opacity: .8;
+  h1, p {
+    color: #21BDAE;
+  }
+}
+
+.searchDiv {
+  width: 70%;
+  height: 1080px;
+  margin: 0 auto;
+  padding: 3%;
+  text-align: center;
+  font-size: 24px;
+  input {
+    background: #21BDAE;
+    text-align: center;
+  }
+  ::placeholder {
+    color: #202020;
+  }
+
+  button {
+    color: #21BDAE;
+  }
+}
+
+.resultDiv {
+  width: 66%;
+  background-color: #21BDAE;
+  margin: 2% auto;
+  opacity: .9;
+  border-radius: 10px;
+  padding: 5px;
+
+  #flagIcon {
+    margin-right: 10px;
+  }
+
+  .glyphicon-map-marker {
+    margin-right: 5px;
+  }
+
+}
+
+.footer {
+  position: fixed;
+  color: #21BDAE;
+  opacity: .8;
+  height: 125px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: #202020;
+  text-align: center;
+  padding-top: 2%;
+
+  .copyright {
+    font-size: 1.2em;
+  }
+
+  .gitLogo {
+    width: 1.6em;
+  }
+
+  .inLogo {
+    width: 1.3em;
+    margin-left: 5px;
+  }
+}
+
